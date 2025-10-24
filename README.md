@@ -1,20 +1,26 @@
-# VisActor Next.js Dashboard Template
+# Finanlytics AI Dashboard
 
-A modern dashboard template built with [VisActor](https://visactor.io/) and Next.js, featuring a beautiful UI and rich data visualization components.
-
-[Live Demo](https://visactor-next-template.vercel.app/)
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?demo-description=A%20modern%20dashboard%20with%20VisActor%20charts%2C%20dark%20mode%2C%20and%20data%20visualization%20for%20seamless%20analytics.&demo-image=%2F%2Fimages.ctfassets.net%2Fe5382hct74si%2F646TLqKGSTOnp1CD1IUqoM%2Fa119adac1f5a844f9d42f807ddc075f5%2Fthumbnail.png&demo-title=VisActor%20Next.js%20Template&demo-url=https%3A%2F%2Fvisactor-next-template.vercel.app%2F&from=templates&project-name=VisActor%20Next.js%20Template&repository-name=visactor-nextjs-template&repository-url=https%3A%2F%2Fgithub.com%2Fmengxi-ream%2Fvisactor-next-template&skippable-integrations=1)
+A comprehensive financial analytics dashboard built with Next.js and VisActor, specifically designed for monitoring and analyzing Indian payment gateway transactions in INR.
 
 ## Features
 
-- 📊 **Rich Visualizations** - Powered by VisActor, including bar charts, gauge charts, circle packing charts, and more
+- 📊 **Payment Analytics** - Track transactions across major Indian payment gateways
+- 💰 **INR Support** - All monetary values displayed in Indian Rupees (₹)
+- 📈 **Revenue Trends** - Visualize revenue growth and transaction patterns over time
+- 🔍 **Gateway Comparison** - Compare performance across different payment gateways
 - 🌗 **Dark Mode** - Seamless dark/light mode switching with system preference support
 - 📱 **Responsive Design** - Fully responsive layout that works on all devices
-- 🎨 **Beautiful UI** - Modern and clean interface built with Tailwind CSS
-- ⚡️ **Next.js 15** - Built on the latest Next.js features and best practices
-- 🔄 **State Management** - Efficient state management with Jotai
-- 📦 **Component Library** - Includes Shadcn components styled with Tailwind
+- ⚡ **Real-time Data** - Fetch and display real-time transaction data
+
+## Supported Payment Gateways
+
+- **UPI** - Unified Payments Interface
+- **Razorpay** - Popular payment gateway for businesses
+- **Paytm** - Leading digital wallet and payment system
+- **PayU** - Comprehensive payment solutions
+- **CCAvenue** - One of India's largest payment gateways
+- **Instamojo** - Simple payment links and checkout
+- **Cashfree** - Complete payment and banking solutions
 
 ## Tech Stack
 
@@ -22,19 +28,16 @@ A modern dashboard template built with [VisActor](https://visactor.io/) and Next
 - [VisActor](https://visactor.io/) - Visualization library
 - [Tailwind CSS](https://tailwindcss.com/) - CSS framework
 - [Shadcn](https://ui.shadcn.com/) - UI components
-- [Jotai](https://jotai.org/) - State management
 - [TypeScript](https://www.typescriptlang.org/) - Type safety
+- [Next-Themes](https://github.com/pacocoursey/next-themes) - Theme management
 
-## Quick Start
+## Getting Started
 
-You can deploy this template to Vercel by clicking the button above, or clone this repository and run it locally.
-
-[Github Repo](https://github.com/mengxi-ream/visactor-next-template)
-
-1. Clone this repository
+1. Clone the repository
 
 ```bash
-git clone https://github.com/mengxi-ream/visactor-next-template
+git clone https://github.com/your-username/fynlatics-ai.git
+cd fynlatics-ai
 ```
 
 2. Install dependencies
@@ -43,10 +46,38 @@ git clone https://github.com/mengxi-ream/visactor-next-template
 pnpm install
 ```
 
-3. Run the development server
+3. Set up environment variables
+
+Create a `.env.local` file and add your API keys:
+
+```env
+NEXT_PUBLIC_API_URL=your_api_url
+# Add other environment variables as needed
+```
+
+4. Run the development server
 
 ```bash
 pnpm dev
+```
+
+5. Open [http://localhost:3000](http://localhost:3000) in your browser
+
+## Data Format
+
+The dashboard expects transaction data in the following format:
+
+```typescript
+interface Transaction {
+  transactionId: string;
+  invoiceDate: string; // ISO 8601 format
+  paymentGatewaySource: string;
+  amount: number; // in INR
+  currency: 'INR';
+  vendor?: string;
+  status?: 'completed' | 'pending' | 'failed' | 'refunded';
+  metadata?: Record<string, unknown>;
+}
 ```
 
 4. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.

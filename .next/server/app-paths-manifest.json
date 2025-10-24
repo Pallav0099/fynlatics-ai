@@ -1,5 +1,7 @@
 {
-  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/api/transactions/kpis/route": "app/api/transactions/kpis/route.js",
+  "/api/transactions/gateways/route": "app/api/transactions/gateways/route.js",
+  "/api/transactions/timeseries/route": "app/api/transactions/timeseries/route.js",
   "/(dashboard)/page": "app/(dashboard)/page.js",
   "/ticket/page": "app/ticket/page.js"
 }
