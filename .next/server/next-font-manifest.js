@@ -1,0 +1,1 @@
+self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/home/pallav/Projects/5th Sem/Fynlatics AI/src/app/layout\":[\"static/media/48d80869c8866503-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"
